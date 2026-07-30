@@ -48,36 +48,6 @@ CREATE TABLE cliente(
     direccion VARCHAR(200)
 );
 
-CREATE TABLE proveedor(
-    id_proveedor INT AUTO_INCREMENT PRIMARY KEY,
-    ruc CHAR(11) UNIQUE,
-    razon_social VARCHAR(150) NOT NULL,
-    telefono VARCHAR(20),
-    direccion VARCHAR(200),
-    correo VARCHAR(120)
-);
-
-CREATE TABLE compra(
-    id_compra INT AUTO_INCREMENT PRIMARY KEY,
-    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
-    total DECIMAL(10,2) NOT NULL,
-    id_proveedor INT NOT NULL,
-    id_usuario INT NOT NULL,
-    CONSTRAINT fk_compra_proveedor FOREIGN KEY(id_proveedor) REFERENCES proveedor(id_proveedor),
-    CONSTRAINT fk_compra_usuario FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario)
-);
-
-CREATE TABLE detalle_compra(
-    id_detalle_compra INT AUTO_INCREMENT PRIMARY KEY,
-    cantidad INT NOT NULL,
-    precio DECIMAL(10,2) NOT NULL,
-    subtotal DECIMAL(10,2) NOT NULL,
-    id_compra INT NOT NULL,
-    id_producto INT NOT NULL,
-    CONSTRAINT fk_detalle_compra FOREIGN KEY(id_compra) REFERENCES compra(id_compra),
-    CONSTRAINT fk_detalle_producto_compra FOREIGN KEY(id_producto) REFERENCES producto(id_producto)
-);
-
 CREATE TABLE venta(
     id_venta INT AUTO_INCREMENT PRIMARY KEY,
     fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
