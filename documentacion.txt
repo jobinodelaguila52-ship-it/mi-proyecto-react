@@ -1,0 +1,26 @@
+1. Problema y objetivo del sistema.
+   El proyecto busca resolver la necesidad de gestionar de forma ordenada y eficiente las operaciones de una tienda tecnológica. Antes de implementar este sistema, los procesos de registro de productos, control de ventas y administración de usuarios podían resultar manuales, poco escalables y propensos a errores. El objetivo principal es centralizar toda esta información en una plataforma web que permita registrar operaciones, consultar datos en tiempo real y mejorar el control del negocio.
+
+2. Tecnologías utilizadas.
+   El sistema está construido con JavaScript como lenguaje principal, Node.js como entorno de ejecución para el servidor, y Express como framework para construir la API REST. Para la interfaz se utiliza HTML, mientras que MySQL actúa como sistema gestor de base de datos. Además, se utiliza la librería mysql2 para la conexión con la base de datos y JWT para implementar autenticación segura basada en tokens.
+
+3. Arquitectura del sistema.
+   La arquitectura del proyecto está organizada en capas para separar responsabilidades. El frontend, representado por la interfaz web, se encarga de la interacción con el usuario. El backend procesa las peticiones, valida datos y ejecuta la lógica de negocio. Por último, la capa de persistencia se encarga de almacenar y consultar la información en MySQL. Esta estructura facilita el mantenimiento del sistema y permite escalarlo en el futuro.
+
+4. Roles y módulos.
+   El sistema está dividido en módulos funcionales para mantener el código organizado. El módulo de autenticación gestiona el acceso de usuarios, el módulo de productos administra el inventario y la información de los artículos, y el módulo de ventas controla el registro, consulta y seguimiento de operaciones comerciales. Este diseño permite que cada parte del sistema tenga una responsabilidad específica y sea más fácil de mantener.
+
+5. Modelo de base de datos.
+   La base de datos está diseñada para almacenar información clave del negocio. Entre las tablas principales se encuentran las de usuarios, productos, ventas y detalle de ventas. Estas tablas están relacionadas entre sí para asegurar que los datos permanezcan consistentes y que sea posible consultar el historial completo de operaciones realizadas. El modelo también permite realizar reportes básicos y mantener el inventario actualizado.
+
+6. Tabla de endpoints.
+   La API expone distintos endpoints para facilitar la interacción entre la interfaz y el servidor. Algunos de los endpoints permiten registrar usuarios, iniciar sesión, listar productos, crear nuevos productos, consultar ventas y registrar transacciones. Cada ruta está asociada a un método HTTP como GET para consultar, POST para crear, PUT para actualizar y DELETE para eliminar registros cuando sea necesario.
+
+7. Capturas del sistema.
+   En este apartado se pueden incluir capturas de pantalla que muestren la vista principal del sistema, el formulario de login, la gestión de productos, la sección de ventas recientes y cualquier otra pantalla relevante. Estas capturas ayudan a comprender mejor la experiencia de usuario y la forma en que se visualizan los módulos del sistema.
+
+8. Pruebas en Postman.
+   Para verificar el correcto funcionamiento de la API, se pueden ejecutar pruebas en Postman sobre cada endpoint. Esto incluye probar el registro e inicio de sesión de usuarios, la creación y listado de productos, el registro de ventas y la obtención de información. Durante estas pruebas se revisa que las respuestas del servidor sean correctas, que los códigos de estado HTTP sean los esperados y que los errores se manejen adecuadamente.
+
+9. Optimización y seguridad aplicada.
+   El sistema incorpora medidas de seguridad y buenas prácticas de desarrollo. Entre ellas se encuentra la autenticación mediante JWT, el control de acceso a rutas protegidas, la validación de entrada de datos y el manejo adecuado de errores para evitar fallos inesperados. También se busca mantener una estructura modular y clara del código, lo que contribuye a la mantenibilidad del proyecto y facilita futuras mejoras o escalabilidad.
